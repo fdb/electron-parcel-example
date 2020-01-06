@@ -1,0 +1,43 @@
+html {
+  font-family: sans-serif;
+  -webkit-user-select: none; /* disable selection */
+  -webkit-user-drag: none; /* disable dragging */
+  cursor: default; /* use default cursor */
+}
+
+body {
+  margin: 0; /* remove default margin */
+}
+
+.is-selectable,
+pre,
+code {
+  -webkit-user-select: auto;
+  cursor: auto;
+}
+
+button {
+  cursor: default;
+}
+
+a {
+  cursor: pointer;
+  text-decoration: none;
+  border-bottom: 1px dashed;
+  outline: none;
+}
+
+a[target],
+  a[href^="https://"],
+  a[href^="http://"] {
+  border-bottom: 1px solid;
+}
+
+a:hover,
+a:focus {
+  border-bottom: none;
+}
+
+img {
+  -webkit-user-drag: none; /* disable dragging */
+}

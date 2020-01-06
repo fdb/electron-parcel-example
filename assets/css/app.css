@@ -1,0 +1,12 @@
+#root {
+  flex: 1;
+  background-color: hsl(250, 23%, 25%);
+  color: white;
+}
+.app {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
