@@ -24,20 +24,17 @@ function createMainWindow() {
 
   // Load the index.html of the app.
   if (process.env.NODE_ENV === 'development') {
-    // const Bundler = require('parcel-bundler');
-    // const entryFiles = path.join(__dirname, 'src/ui/index.html');
-    // const options = {
-    //   outDir: path.join(__dirname, 'build'),
-    //   hmrPort: 1234
-    // };
-    // const bundler = new Bundler(entryFiles, options);
-    // bundler.bundle().then(x => {
-    //   console.log('stuff', x);
-    //   gMainWindow.loadURL('http://localhost:1234/');
-    //   gMainWindow.webContents.openDevTools();
-    // });
-    gMainWindow.loadURL('http://localhost:1234/');
-    gMainWindow.webContents.openDevTools();
+    const Bundler = require('parcel-bundler');
+    const entryFiles = path.join(__dirname, 'src/ui/index.html');
+    const options = {
+      outDir: path.join(__dirname, 'build'),
+      target: 'electron'
+    };
+    const bundler = new Bundler(entryFiles, options);
+    bundler.serve().then(x => {
+      gMainWindow.loadURL('http://localhost:1234/');
+      gMainWindow.webContents.openDevTools();
+    });
   } else {
     gMainWindow.loadFile(path.join(__dirname, 'build/index.html'));
   }

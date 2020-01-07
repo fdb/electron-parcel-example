@@ -17,7 +17,7 @@ export default class App extends Component {
   render(_, { clicks }) {
     return (
       <div class="app">
-        <img src={appIcon} width={256} onClick={this._onClick} />
+        <img class="moon" src={appIcon} width={256} onClick={this._onClick} />
         <br />
         <h1>Clicks: {clicks}</h1>
       </div>

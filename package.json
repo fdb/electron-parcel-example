@@ -5,11 +5,9 @@
   "version": "1.0.0",
   "main": "main.js",
   "scripts": {
-    "start": "concurrently -k 'yarn run electron-dev' 'yarn run parcel-dev'",
-    "electron-dev": "NODE_ENV=development electron .",
-    "parcel-dev": "parcel serve -d build src/ui/index.html",
-    "parcel-build": "parcel build -d build -t electron --public-url . src/ui/index.html",
-    "dist": "rm -rf dist && npm run parcel-build && electron-builder build ",
+    "start": "NODE_ENV=development electron .",
+    "build": "parcel build -d build -t electron --public-url . src/ui/index.html",
+    "dist": "rm -rf dist && npm run build && electron-builder build ",
     "format": "prettier --write **/*.js **/*.css"
   },
   "license": "MIT",

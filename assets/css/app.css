@@ -10,3 +10,11 @@
   justify-content: center;
   align-items: center;
 }
+
+.moon:hover {
+  filter: brightness(1.2);
+}
+
+.moon:active {
+  filter: brightness(0.8);
+}
