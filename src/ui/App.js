@@ -21,8 +21,20 @@ export default class App extends Component {
 
   _onMenuEvent(name) {
     switch (name) {
+      case 'open':
+        this._onOpenFile();
+        break;
       case 'quit':
         remote.app.quit();
+        break;
+    }
+  }
+
+  async _onOpenFile() {
+    const window = remote.BrowserWindow.getAllWindows()[0];
+    const result = await remote.dialog.showOpenDialog(window);
+    if (!result.canceled) {
+      console.log(result.filePaths);
     }
   }
 
